@@ -1,0 +1,103 @@
+@import url(landing_page/cores.css);
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-default{
+    background-color: var(--color-blue-100);
+    border-radius: 10px;
+    color: #fff;
+    font-size: .8rem;
+    padding: .5rem 1rem;
+    border: none;
+    cursor: pointer;
+    transition: var(--trans03);
+    margin-top: 20px;
+}
+
+.btn-default:hover{
+    background-color: #0571D3;
+}
+
+.buttons-form{
+    display: flex;
+    gap: 20px;
+}
+
+h1{
+    margin-top: -20px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    background-image: var(--color-gradient);
+    background-clip: text;
+    color: transparent;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.campos{
+    width: fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 2px 2px 8px 0px rgba(0, 0, 0, .6);
+    transition: var(--trans03);
+    position: relative;
+}
+
+.campo{
+    display: flex;
+    flex-direction: column;
+}
+
+.campo i{
+    position: absolute;
+    top: 50px;
+    right: 20px;
+} 
+
+.campo label{
+    background-image: var(--color-gradient);
+    background-clip: text;
+    color: transparent;
+    letter-spacing: 1px;
+}
+
+.campo input{
+    width: 700px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid black;
+    padding: 5px;
+}
+
+/* Tema escuro */
+body.dark .campos{
+    background-color: #1d1d1d;
+}
+
+body.dark h1{
+  color: var(--color-blue-50);
+}
+
+body.dark .campo input{
+    background-color: #1d1d1d;
+    color: #fff;
+    border-bottom: 1px solid #fff;
+}
+
+body.dark .campo i{
+    color: #fff;
+}

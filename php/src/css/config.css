@@ -1,0 +1,253 @@
+@import url(landing_page/cores.css);
+
+body{
+    overflow: hidden;
+}
+
+#main_content{
+    height: 100vh;
+    width: 110%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#geral_config{
+    display: flex;
+    background-color: var(--color-light-50);
+    padding: 40px 40px;
+    border-radius: 8px;
+    gap: 30px;
+    width: 900px;
+    box-shadow: 5px 5px 8px rgba(0, 0, 0, 0.336);
+    transition: background-color .5s ease;
+}
+
+.image-preview{
+    border-radius:50%;
+    width: 168px;
+    height: 168px;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+#header_config{
+    display: flex;
+    width: 40%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
+
+.image-upload{
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    border: 1px solid var(--color-blue-100);
+}
+
+#uploadbtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    position: absolute;
+    top: 140px;
+    right: 90px;
+    font-size: 20px;
+    color: #fff;
+    background-color: var(--color-blue-100);
+    padding: 6px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--trans-04);
+}
+
+#uploadbtn:hover{
+    background-color: var(--color-blue-50);
+}
+
+#fundo_sobre{
+    z-index: -1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#header_config h1{
+    font-size: 30px;
+    font-weight: 500;
+    color: #1d1d1d;
+    transition: color .4s ease;
+}
+
+.btn-default{
+    background-color: var(--color-blue-100);
+    border-radius: 10px;
+    color: #fff;
+    font-size: .8rem;
+    padding: .5rem 1rem;
+    border: 1px solid var(--color-gradient);
+    cursor: pointer;
+    transition: all .4s ease;
+}
+
+.btn-default:hover{
+    background-color: var(--color-blue-50);
+}
+
+.descriptions-all{
+    display: flex;
+    gap: 50px;
+    justify-content: space-between;
+}
+
+#description_general{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+#description_general button{
+    margin-right: -5rem;
+}
+
+.description-config{
+    margin-right: 4rem;
+}
+
+.description-config h3{
+    transition: color .3s ease;
+}
+
+/* Modal */
+
+#dialog_cadastro::backdrop,
+#dialog_cadastro1::backdrop,
+#dialog_cadastro2::backdrop,
+#dialog_cadastro3::backdrop{
+    background-color: rgb(0 0 0 / .78);
+}
+
+#dialog_cadastro,
+#dialog_cadastro1,
+#dialog_cadastro2,
+#dialog_cadastro3{
+    border: none;
+    border-radius: .5rem;
+    box-shadow: 0 0 2em rgb(0 0 0 / 0.4);
+    margin-left: 34%;
+    margin-top: 15%;
+    width: 40%;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    height: fit-content;
+}
+
+.dialog-title{
+    margin-bottom: 5%;
+}
+
+.btnDialog{
+    background-color: var(--color-blue-100);
+    padding: 5px 20px 5px 20px;
+    border: none;  
+    border-radius: 10px;
+    cursor: pointer;
+    color: #fff; 
+    transition: var(--trans-04);
+}
+
+.btnDialog:hover{
+    background-color: var(--color-blue-50);
+}
+
+#dialog_cadastro #nome,
+#dialog_cadastro1 #email,
+#dialog_cadastro2 #senha,
+#dialog_cadastro3 #foto{
+    border: none;
+    border-bottom: 1px solid #1d1d1d;
+    outline: none;
+    padding: 10px 4rem 10px 4px;
+    text-align: left;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+body.dark #dialog_cadastro #nome,
+body.dark #dialog_cadastro1 #email,
+body.dark #dialog_cadastro2 #senha,
+body.dark #dialog_cadastro3 #foto{
+    border-bottom: 1px solid #ffffff;
+}
+
+
+.dialog-inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dialog-inputs input{
+    font-size: 20px;
+}
+
+.image-dialog{
+    border: none;
+    height: 50px;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.header-dialog{
+    background-color: var(--color-blue-100);
+    color: #fff;
+    border-radius: 10px;
+    padding: 3px 10px 3px 10px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    transition: var(--trans-04);
+    letter-spacing: 1px;
+}
+
+.header-dialog i{
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Tema dark */
+body.dark #geral_config{
+    background-color: #242526;
+}
+
+body.dark #header_config h1{
+    color: var(--color-light-50);
+}
+
+body.dark .description-config h3, 
+body.dark .description-config span{
+    color: var(--color-light-50);
+}
+  
+
+body.dark #dialog_cadastro,
+body.dark #dialog_cadastro1,
+body.dark #dialog_cadastro2,
+body.dark #dialog_cadastro3{
+    background-color: #1d1d1d;
+}
+
+body.dark #dialog_cadastro input,
+body.dark #dialog_cadastro1 input,
+body.dark #dialog_cadastro2 input,
+body.dark #dialog_cadastro3 input{
+    background-color: #1d1d1d;
+    color: #fff;
+}

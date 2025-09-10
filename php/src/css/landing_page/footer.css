@@ -1,0 +1,37 @@
+@import url('cores.css');
+@import url(us.css);
+
+footer{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-image: var(--color-gradient);
+    width: 100%;
+    z-index: 1;
+}
+
+#footer_itens{
+    display: flex;
+    justify-content: space-between;
+    margin-right: 40px;
+    margin-left: 20px;
+    padding-bottom: 10px;
+}
+
+#copyright{
+    font-weight: 500;
+    font-size: 16px;
+    color: #fff;
+}
+
+@media screen and (max-width: 817px){
+    footer{
+        margin-top: 30px;
+    }
+}
+
+@media screen and (max-width: 740px){
+    #copyright{
+        width: 40%;
+    }
+}

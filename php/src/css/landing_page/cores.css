@@ -1,0 +1,20 @@
+:root{
+    --color-light-50: #f9fafc;
+    --color-light-900:#fff;
+
+    --color-dark-50: #797984;
+    --color-dark-100: #312d37;
+    --color-dark-900: #000;
+
+    --color-blue-50: #0571D3;
+    --color-blue-100: #033A6D;
+
+    --color-gradient: linear-gradient(90deg, var(--color-blue-50), var(--color-blue-100));
+    --color-gradient-bottom: linear-gradient(to bottom, var(--color-blue-50), var(--color-blue-100));
+
+    --trans03: all .3s ease;
+    --trans04: all .4s ease;
+    --trans05: all .5s ease;
+    --trans06: all .6s ease;
+
+}

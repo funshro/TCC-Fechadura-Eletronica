@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="php/src/css/style.css">
+    <link rel="shortcut icon" href="php/src/imagens/SLlogo.svg" type="image/x-icon">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Slock</title>
+  </head> 
+  <body>
+    <header>
+      <nav id="navbar">
+
+        <!-- Componente 1 (dentro da navbar) -->
+         <span id="nav_logo"><span id="nav_logo_s">S</span>lock</span>
+
+         <!-- Componente 2 (dentro da navbar) -->
+         <ul id="nav_list">
+            <li class="nav-item active">
+              <a href="#home">Página Inicial</a>
+            </li>
+            <li class="nav-item">
+              <a href="#sobre">Fechadura</a>
+            </li>
+            <li class="nav-item">
+              <a href="#us">Quem somos</a>
+            </li>
+         </ul> <!-- Fechamento da lista -->
+
+         <!-- Componente 3 (dentro da navbar) -->
+           <!-- <form action="php/cadastro.php">
+             <button class="btn-default">
+                Cadastrar-se
+             </button>
+           </form> -->
+          
+         <!-- Componente 4 (dentro da navbar) -->
+         <form action="php/login.php">
+           <button class="btn-default login-default">
+            <span>Fazer login</span>
+            <i class="fa-solid fa-arrow-right"></i>
+           </button>
+         </form>
+
+         <!-- Componente 5 (dentro da navbar) -->
+         <button id="mobile_btn">
+          <i class="fa-solid fa-bars"></i>
+         </button>
+      </nav> <!-- Fechamento da nav -->
+
+      <div id="mobile_menu">
+
+        <!-- Criando uma lista para a parte mobile -->
+         <ul id="mobile_nav_list">
+            <li class="nav-item">
+              <a href="#home">Página inicial</a>
+            </li>
+            <li class="nav-item">
+              <a href="#sobre">Fechadura</a>
+            </li>
+            <li class="nav-item">
+              <a href="#us">Quem somos</a>
+            </li>
+         </ul> 
+         <!-- Fechamento da lista - parte mobile -->
+
+         <form action="php/login.php">
+           <button class="btn-default">
+            Entrar
+           </button>
+         </form>
+
+         <br>
+
+         <form action="php/cadastro.php">
+           <button class="btn-default">
+            Cadastrar-se
+           </button>
+         </form>
+
+      </div> <!-- Fechamento da div da parte mobile-->
+
+    </header> <!-- Fechamento do header -->
+    
+    <main id="content">
+
+      <!-- 1 componente section (dentro de content) -->
+      <section id="home">
+        <div id="cta">
+          <!-- <div class="shape"></div>  ver se acho alguma forma pra aplicar dps -->
+
+          <!-- Componente 1 (dentro de cta) -->
+          <h1 class="title animate-right">Bem vindo, <br>
+          Conheça nossa <span id="title-fechadura" class="animate-right">Fechadura Inteligente</span>
+          </h1>
+
+          <!-- Componente 2 (dentro de cta) -->
+          <p class="description animate-right">
+            Transforme a segurança da sua casa com a fechadura inteligente: o futuro está ao seu alcance com a combinação perfeita de tecnologia e conveniência!
+          </p>
+
+          <!-- Componente 3 (dentro de cta) -->
+          <div id="cta_buttons" class="animate-right">
+            <a href="informacoes.html" class="btn-default" target="_blank">
+              <span style="color: white;">Ver mais informações</span>
+          </a>
+
+          <a href="tel:+55555555555" id="phone_button">
+              <button class="btn-default">
+                  <i class="fa-solid fa-phone"></i>
+              </button>
+              (17) 99662-2989
+          </a>
+          </div>
+
+          <!-- Componente 4 (dentro de cta) -->
+          <div class="social-media-buttons animate-right">
+            <a href="">
+              <i class="fa-brands fa-whatsapp"></i>
+          </a>
+
+          <a href="">
+              <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a href="">
+              <i class="fa-brands fa-facebook"></i>
+          </a>
+          </div>
+
+          <img src="php/src/imagens/forma_circular.svg" id="image_cta">
+        </div>
+      </section>
+
+      <!-- 2 componente section (dentro de content) -->
+       <section id="sobre">
+          <div class="carrossel">
+            <div class="container" style="z-index: -1;">
+              <img src="php/src/imagens/Img 01.png" alt="">
+              <img src="php/src/imagens/Img 02.png" alt="">
+              <img src="php/src/imagens/Img 03.png" alt="">
+              <img src="php/src/imagens/Img 04.png" alt="">
+            </div>
+            <!-- <h1 style="z-index: 3;">Este projeto apresenta o desenvolvimento de uma fechadura eletrônica com funcionalidades avançadas de controle de acesso e registro de dados. A fechadura utiliza tecnologias modernas como RFID (identificação por radiofrequência) e biometria (leitor digital) para autenticar os usuários. Além disso, ela possui um sistema integrado que envia dados sobre os acessos, como horário e identificação do usuário, para um servidor remoto. Essa informação pode ser acessada através de uma interface web, permitindo que um administrador (geralmente o chefe) cadastre novos usuários, defina níveis de acesso e visualize o histórico de acessos.
+
+              A fechadura é composta tanto por hardware (microcontrolador, leitor de cartões RFID, módulo biométrico, conexão Wi-Fi ou Ethernet) quanto por software (sistema operacional e linguagem de programação do microcontrolador, linguagem e framework do servidor, banco de dados). O processo de instalação envolve a montagem do circuito eletrônico, a configuração do software e o cadastro dos usuários..</h1> -->
+          </div>
+       </section>
+
+       <section id="us">
+      
+        <div class="div-geral-us">
+          <div id="container_us">
+            <div id="text_us" class="animate-bottom">
+              <h1>Sobre nós</h1>
+              <span style="color: #1d1d1d;">Um pouquinho de quem nós somos</span>
+            </div>
+            <div class="boxes animate-bottom">
+              <!-- Componente 1 (dentro de boxes) -->
+              <div class="box-us">
+                <img src="php/src/imagens/rafael_user.jpg" alt="">
+                <div class="about">
+                  <h3>Rafael Trindade Rodrigues</h3>
+                  <div class="description-us">
+                    Cursando Desenvolvimento de Sistema desde 2022 na escola Etec Philadelpho Gouvêa Netto. Nasceu na cidade de São José do Rio Preto e mora em Paulo de Faria. Possui experiência na área e pretende ingressar em uma empresa de tecnologia. Almeja ser um grande empreendedor e investidor, tanto porque gosta quanto por querer ajudar aqueles com quem se importa
+                  </div>
+                </div>
+              </div>
+              <div class="box-us">
+                <img src="php/src/imagens/raul_user.jpg" alt="">
+                <div class="about">
+                  <h3>Raul Água Villela</h3>
+                  <div class="description-us">
+                    Programador por dinheiro e futuro grande Empresário HAHAHAHA
+                  </div>
+                </div>
+              </div>
+              <div class="box-us">
+                <img src="php/src/imagens/lucas_user.jpg" alt="">
+                <div class="about">
+                  <h3>Lucas Bandeira Lima Ferreira</h3>
+                  <div class="description-us">
+                    Atleta e estudante da ETEC, onde curso Desenvolvimento de Sistemas. Tenho experiência com desenvolvimento de sites e tráfego pago, e já alcancei resultados expressivos, como faturar cinco dígitos em apenas sete dias
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <img src="php/src/imagens/sobre_fundo.svg" alt="" id="fundo_sobre">
+          </div>
+        </div>
+        <footer>
+          <img src="php/src/imagens/wave.svg" alt="">
+    
+          <div id="footer_itens">
+            <span id="copyright">
+              &copy 2024, Rafael T. Rodrigues, Raul A. Villela, Lucas B. L. Ferreira
+            </span>
+    
+            <div class="social-media-buttons">
+              <a href="">
+                <i class="fa-brands fa-whatsapp"></i>
+              </a>
+    
+            <a href="">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+    
+            <a href="">
+                <i class="fa-brands fa-facebook"></i>
+            </a>
+            </div>
+          </div>
+      </footer>
+       </section>
+ </main>
+
+    
+
+     <!-- JQuery -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="php/src/js/navbar.js"></script> 
+    <script src="php/src/js/main.js"></script> 
+    <script src="php/src/js/carrossel.js"></script>
+
+    
+  </body>
+</html>

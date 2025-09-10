@@ -1,0 +1,165 @@
+CREATE DATABASE BD_TCC_FECHADURA;
+USE BD_TCC_FECHADURA;
+
+CREATE TABLE TB_USUARIO(
+ID_USUARIO INT PRIMARY KEY AUTO_INCREMENT,
+NOME_USUARIO VARCHAR(70) NOT NULL,
+EMAIL_USUARIO VARCHAR(50) NOT NULL,
+SENHA_USUARIO VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE TB_FUNCIONARIO(
+id INT AUTO_INCREMENT PRIMARY KEY,
+nome VARCHAR(50),
+uid VARCHAR(50) NOT NULL,
+email VARCHAR(150),
+usuario_id INT
+FOREIGN KEY (usuario_id) REFERENCES TB_USUARIO(ID_USUARIO)
+);
+
+CREATE TABLE uids(
+id INT AUTO_INCREMENT PRIMARY KEY,
+uid VARCHAR(50) NOT NULL,
+timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+
+INSERT INTO TB_USUARIO(NOME_USUARIO, EMAIL_USUARIO, SENHA_USUARIO)
+VALUES('Rafael Trindade Rodrigues', 'rafaelrodrigues@gmail.com', 'rafael2006');
+
+ALTER TABLE uids ADD acao VARCHAR(10);
+
+ALTER TABLE uids ADD COLUMN tipo ENUM('entrada', 'saida') DEFAULT 'entrada';
+
+ALTER TABLE uids ADD COLUMN tipo_evento ENUM('entrada', 'saida') NOT NULL;
+
+
+
+SELECT * FROM TB_FUNCIONARIO WHERE uid = 'b3571af7';
+
+ALTER TABLE tb_usuario ADD COLUMN IMAGEM_USUARIO VARCHAR(50);
+
+SELECT * FROM tb_usuario WHERE email_usuario = 'raul@gmail.com';
+SELECT * FROM tb_funcionario;
+
+UPDATE tb_funcionario SET nome = 'Raul', email = 'raul@gmail.com' WHERE id = 1;
+
+SELECT * FROM TB_FUNCIONARIO WHERE usuario_id = '27';
+
+SELECT f.nome, u.uid, u.timestamp
+FROM TB_FUNCIONARIO f
+JOIN uids u ON f.uid = u.uid
+ORDER BY u.timestamp DESC
+LIMIT 100;
+
+SELECT f.nome, u.uid, u.max_timestamp
+FROM TB_FUNCIONARIO f 
+JOIN (
+    SELECT uid, MAX(timestamp) AS max_timestamp
+    FROM uids
+    GROUP BY uid
+) AS u ON f.uid = u.uid
+JOIN uids u2 ON u.uid = u2.uid AND u.max_timestamp = u2.timestamp
+ORDER BY u.max_timestamp DESC 
+LIMIT 100;
+
+SELECT f.nome, f.uid, u.timestamp 
+            FROM TB_FUNCIONARIO f 
+            JOIN tb_usuario us ON f.usuario_id = us.ID_USUARIO 
+            JOIN uids u ON f.uid = u.uid 
+            WHERE us.email_usuario = 'raulagua@gmail.com' 
+            ORDER BY u.timestamp DESC 
+            LIMIT 100;
+            
+            
+SELECT COUNT(*) AS total_acessos 
+        FROM uids 
+        WHERE timestamp >= NOW() - INTERVAL 1 DAY;
+        
+        
+SELECT COUNT(*) AS total_acessos
+FROM uids 
+WHERE timestamp >= NOW() - INTERVAL 1 DAY 
+AND uid IN (
+    SELECT uid 
+    FROM TB_FUNCIONARIO 
+    WHERE email = 'raul@gmail.com'
+);
+
+
+
+
+
+    SELECT f.nome, uid.timestamp
+    FROM TB_FUNCIONARIO f
+    JOIN tb_usuario u ON f.usuario_id = u.ID_USUARIO
+    JOIN uids uid ON f.uid = uid.uid
+    WHERE u.email_usuario = 'raulagua2.0@gmail.com'
+    ORDER BY uid.timestamp DESC
+    LIMIT 1;
+
+
+
+
+SELECT f.nome, f.uid, u.timestamp 
+        FROM TB_FUNCIONARIO f 
+        JOIN tb_usuario us ON f.usuario_id = us.ID_USUARIO 
+        JOIN uids u ON f.uid = u.uid 
+        WHERE us.email_usuario = 'alessandra@gmail.com' 
+        AND u.timestamp >= (SELECT MIN(u.timestamp) FROM uids WHERE u.uid = f.uid)
+        ORDER BY u.timestamp DESC 
+        LIMIT 100;
+
+
+
+
+SELECT COUNT(*) AS total_acessos
+                        FROM uids 
+                        WHERE timestamp >= NOW() - INTERVAL 1 DAY 
+                        AND uid IN (
+                            SELECT uid 
+                            FROM TB_FUNCIONARIO 
+                            JOIN tb_usuario us ON TB_FUNCIONARIO.usuario_id = us.ID_USUARIO
+                            WHERE us.email_usuario = 'raul@gmail.com'
+                        );
+                        
+                        
+                        
+ SELECT * FROM TB_FUNCIONARIO WHERE uid = '33c1172f' AND usuario_id = '25';             
+                        
+                        
+                        
+
+
+SELECT COUNT(*) AS total_acessos
+FROM uids 
+WHERE timestamp >= NOW() - INTERVAL 1 DAY 
+AND uid IN (
+    SELECT uid 
+    FROM TB_FUNCIONARIO 
+    WHERE email = 'raulagua2.0@gmail.com'
+);
+        
+SELECT uid, timestamp 
+FROM uids 
+WHERE timestamp >= NOW() - INTERVAL 1 DAY 
+AND uid IN (
+    SELECT uid 
+    FROM TB_FUNCIONARIO 
+    WHERE email = 'raulagua2.0@gmail.com'
+);
+
+
+        
+SELECT COUNT(*) AS total_acessos 
+FROM uids AS historico 
+JOIN tb_usuario AS usuario ON historico.usuario_id = usuario.ID_USUARIO 
+WHERE usuario.email_usuario = 'raulagua2.0@gmail.com' 
+AND historico.timestamp >= NOW() - INTERVAL 1 DAY;
+
+
+SELECT COUNT(u.uid) AS total_acessos
+FROM uids u
+JOIN TB_FUNCIONARIO f ON u.uid = f.uid
+WHERE f.email = 'raul@gmail.coml'  -- Substitua 'logged_email' pelo email real do funcionário
+AND u.timestamp >= NOW() - INTERVAL 1 DAY;

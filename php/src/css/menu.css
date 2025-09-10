@@ -1,0 +1,361 @@
+@import url(landing_page/cores.css);
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Ocultar a barra de rolagem */
+
+  
+  /* Personalizar o thumb */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  
+#header_main{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, .5);
+    background-color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+#header_main h1{
+    /* color: #222; */
+    background-image: var(--color-gradient);
+    background-clip: text;
+    color: transparent;
+}
+
+.search-box{
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 10px;
+    background: var(--primary-color-light);
+    border-radius: 6px;
+    transition: var(--trans-03);
+}
+
+.search-box .icon{
+    font-size: 20px;
+}
+
+.search-box input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border:none;
+    font-size: 16px;
+    font-weight: 500;
+    border-radius: 6px;
+    background: var(--primary-color-light);
+}
+
+.user-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-wrapper img{
+    border-radius: 50%;
+    margin-right: 1rem;
+}
+
+main{
+    margin-top: 85px;
+    padding: 2rem 1.5rem;
+    min-height: calc(100vh - 90px);
+}
+
+.cards{
+    margin-top: -4rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+}
+
+.card-single{
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 2px;
+    transition: var(--trans03);
+}
+
+.card-single h1{
+    transition: var(--trans03);
+}
+
+.card-single div:last-child span{
+    font-size: 3rem;
+    color: var(--color-blue-100);
+    transition: var(--trans03);
+}
+
+.card-single div:first-child span{
+    color: #1d1d1d;
+    transition: var(--trans03);
+}    
+
+.card-single:last-child{
+    background: var(--color-gradient);
+}
+
+.card-single:last-child h2,
+.card-single:last-child div:last-child span,
+.card-single:last-child div:first-child span {
+    color: #fff;
+}
+
+
+.card-clock{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Glass+Antiqua&family=Lora:ital,wght@0,400..700;1,400..700&display=swap');
+
+.card-clock h2{
+    font-family: "Lora", serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+    font-size: 60px;
+}
+
+
+
+
+/* segunda parte - tabelas */
+.recent-grid{
+    margin-top: 3.5rem;
+    display: grid;
+    grid-gap: 2rem;
+    grid-template-columns: 65% auto;
+    overflow: hidden;
+}
+
+.recent-grid h3{
+    transition: var(--trans03);
+}
+
+.card{
+    border-radius: 5px;
+
+}
+
+.card-customer{
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+.card-header{
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 0px 0px 0px 0px;
+}
+
+.card-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.card-header button{
+    background-image: var(--color-gradient);
+    border-radius: 10px;
+    color: #fff;
+    font-size: .8rem;
+    padding: .5rem 1rem;
+    border: 1px solid var(--color-gradient);
+    cursor: pointer;
+}
+
+table{
+    border-collapse: collapse;
+    background-color: #fff;
+    border-radius: 0px 0px 10px 10px;
+}
+
+thead tr{
+    border-top: 1px solid #f0f0f0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+thead td{
+    font-weight: 700;
+}
+
+td {
+    padding: .5rem;
+    font-size: .9rem;
+    color: #222;
+    transition: var(--trans03);
+}
+
+td .status{
+    display: inline-block;
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    margin-right: 1rem;
+    margin-right: 1rem;
+}
+
+tr td:last-child{
+    display: flex;
+    align-items: center;
+}
+
+.status.green{
+    background: green;
+}
+
+.status.red{
+    background: red;
+}
+
+/* .card-body .customer {
+    padding: 10px;
+} */
+
+.table-responsive{
+    width: 100%;
+    height: 710px;
+    overflow-x: hidden;
+    
+}
+
+.customers{
+    height: 770px;
+    overflow-x: hidden;
+    border-radius: 0px 0px 0px 0px;
+}
+
+.customer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem .7rem;
+}
+/* 
+.info{
+    display: flex;
+    align-items: center;
+}
+
+.info img{
+    border-radius: 50%;
+    margin-right: 1rem;
+} */
+
+.info h4{
+    font-size: 1rem;
+    font-weight: 700;
+    color: #333;
+    transition: var(--trans03);
+}
+
+.info small{
+    font-weight: 600;
+    color: var(--color-dark-100);
+    transition: var(--trans03);
+}
+
+.contact span{
+    font-size: 1.2rem;
+    display: inline-block;
+    margin-left: .5rem;
+    background-image: var(--color-gradient);
+    background-clip: text;
+    color: transparent;
+    transition: var(--trans03);
+}
+
+
+/*Dark*/
+body.dark #header_main{
+    background-color: #242526;
+}
+
+body.dark #header_main h1,
+body.dark .user-wrapper,
+body.dark .search-wrapper,
+body.dark .search-wrapper input,
+body.dark .user-wrapper {
+    color: #fff;
+}
+
+body.dark .search-wrapper{
+    border: 2px solid #fff;
+}
+
+
+body.dark .card-single{
+    background-color: #fff;       
+}
+
+body.dark .card-header{
+    background-color: #fff;
+}
+
+body.dark .search-box i{
+    color: #fff;
+}
+
+body.dark .search-box input{
+    color: #fff;
+}
+
+body.dark .card-single{
+    background-color: #242526;
+}
+
+body.dark .card-single div:first-child span,
+body.dark .card-single div:last-child span,
+body.dark .card-single h1,
+body.dark td,
+body.dark .recent-grid h3,
+body.dark .info h4,
+body.dark .info small,
+body.dark .contact span
+{
+    color: #fff;
+}
+
+
+body.dark .card-header{
+    background-color: #242526;
+    border-bottom: 1px solid #fff;
+}
+
+body.dark thead tr{
+    border-top: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+}
+
+body.dark table{
+    background-color: #242526;
+}
+
+body.dark .card-customer{
+    background-color: #242526;
+}
+
+/* Responsividade */
